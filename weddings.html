@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- EDIT ME: Page title and description for this catalog page -->
+  <title>Weddings | Chef with the Lens Studio</title>
+  <meta name="description" content="Wedding and engagement photography by Chef with the Lens Studio: ceremonies, couples and the moments in between." />
+
+  <!-- Applies the visitor's saved Light/Dark choice before the page
+       draws, so there is no flash. Default is Light. (No need to edit.) -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      try {
+        if (localStorage.getItem("cwl-theme") === "dark") d.setAttribute("data-theme", "dark");
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- EDIT ME: Brand name -->
+      <a class="brand" href="index.html">Chef with the Lens Studio</a>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <!-- EDIT ME: Menu links. The first three open the catalog pages. -->
+        <ul>
+          <li><a href="weddings.html" aria-current="page">Weddings</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="portraits.html">Portraits</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Settings (Appearance: Light / Dark) -->
+        <div class="settings">
+          <button class="icon-btn settings-toggle" type="button"
+                  aria-expanded="false" aria-controls="settings-panel" aria-label="Settings">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M19.14 12.94a7.07 7.07 0 0 0 .06-.94 7.07 7.07 0 0 0-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.03 7.03 0 0 0-1.63-.94l-.36-2.54a.5.5 0 0 0-.5-.42h-3.84a.5.5 0 0 0-.5.42l-.36 2.54c-.59.24-1.13.56-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L2.65 8.84a.5.5 0 0 0 .12.64l2.03 1.58a7.07 7.07 0 0 0 0 1.88l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32c.13.22.39.3.6.22l2.39-.96c.5.38 1.04.7 1.63.94l.36 2.54c.05.24.25.42.5.42h3.84c.25 0 .45-.18.5-.42l.36-2.54c.59-.24 1.13-.56 1.63-.94l2.39.96c.22.08.47 0 .6-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58ZM12 15.6A3.6 3.6 0 1 1 12 8.4a3.6 3.6 0 0 1 0 7.2Z"/>
+            </svg>
+          </button>
+          <div id="settings-panel" class="settings-panel" role="group" aria-labelledby="appearance-label" hidden>
+            <p id="appearance-label" class="settings-title">Appearance</p>
+            <div class="segmented">
+              <button type="button" class="theme-option" data-theme-choice="light" aria-pressed="true">Light</button>
+              <button type="button" class="theme-option" data-theme-choice="dark" aria-pressed="false">Dark</button>
+            </div>
+          </div>
+        </div>
+
+        <a class="btn btn-small header-cta" href="index.html#contact">Book</a>
+
+        <!-- Phone menu button (only visible on small screens) -->
+        <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         CATALOG PAGE: WEDDINGS
+         EDIT ME: the big title and the one-line intro below.
+         ============================================================ -->
+    <section class="catalog-hero" aria-labelledby="page-title">
+      <div class="container">
+        <a class="back-link" href="index.html">&larr; Home</a>
+        <p class="eyebrow">Catalog</p>
+        <h1 id="page-title">Weddings.</h1>
+        <p class="section-intro">Ceremonies, couples and engagement sessions, told naturally from first look to last dance.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         GALLERY
+         HOW TO ADD A PHOTO:
+           1. Put the photo in images/catalog/weddings/
+              (max ~2000px on the long side, under ~500 KB).
+           2. Copy one <li> line below and change the file name in BOTH
+              href="..." and src="...", and describe it in alt="...".
+           3. Use class="reveal" for WIDE photos and
+              class="reveal tall" for TALL (portrait) photos.
+         To remove a photo, delete its whole <li> line.
+         ============================================================ -->
+    <section class="catalog-gallery" aria-label="Weddings gallery">
+      <div class="container">
+        <ul class="portfolio-grid">
+          <li class="reveal feature"><a href="images/catalog/weddings/church-ceremony.jpg" class="portfolio-item"><img src="images/catalog/weddings/church-ceremony.jpg" alt="Wide view of a wedding ceremony in a bright modern church with a curved white tiered ceiling and stained glass" loading="lazy" width="2000" height="1333" /></a></li>
+          <li class="reveal tall"><a href="images/catalog/weddings/arcade-couple.jpg" class="portfolio-item"><img src="images/catalog/weddings/arcade-couple.jpg" alt="Bride in a black tulle gown and groom in a white tuxedo walking hand in hand through a warm arched arcade" loading="lazy" width="1399" height="2000" /></a></li>
+          <li class="reveal"><a href="images/catalog/weddings/bouquet-tunnel-kiss.jpg" class="portfolio-item"><img src="images/catalog/weddings/bouquet-tunnel-kiss.jpg" alt="Couple kissing under a tunnel of raised bouquets and arms from the bridal party" loading="lazy" width="2000" height="1333" /></a></li>
+          <li class="reveal"><a href="images/catalog/weddings/vows-black-and-white.jpg" class="portfolio-item"><img src="images/catalog/weddings/vows-black-and-white.jpg" alt="Black-and-white photo of a couple exchanging vows at the altar, officiant in the foreground" loading="lazy" width="2000" height="1333" /></a></li>
+          <li class="reveal tall"><a href="images/catalog/weddings/park-bench-engagement.jpg" class="portfolio-item"><img src="images/catalog/weddings/park-bench-engagement.jpg" alt="Engaged couple cuddling on a park bench behind a large wooden name sign" loading="lazy" width="1333" height="2000" /></a></li>
+          <li class="reveal"><a href="images/catalog/weddings/lakeside-dock-engagement.jpg" class="portfolio-item"><img src="images/catalog/weddings/lakeside-dock-engagement.jpg" alt="Couple seen from behind in matching king and queen sweatshirts on a lakeside dock under a dramatic cloudy sky" loading="lazy" width="2000" height="1333" /></a></li>
+          <li class="reveal"><a href="images/catalog/weddings/forehead-embrace-engagement.jpg" class="portfolio-item"><img src="images/catalog/weddings/forehead-embrace-engagement.jpg" alt="Engaged couple in a close forehead-to-forehead embrace against tree bark, engagement ring visible" loading="lazy" width="1620" height="1080" /></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Call to action. EDIT ME: heading and sentence -->
+    <section class="section catalog-cta">
+      <div class="container reveal">
+        <h2>Like what you see?</h2>
+        <p class="section-intro">Tell me about your plans and I'll get back to you with availability and pricing.</p>
+        <div class="cta-links">
+          <a class="btn btn-large" href="index.html#contact">Book a session</a>
+          <a href="index.html">&larr; Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">Chef with the Lens Studio</p>
+      <!-- EDIT ME: Add social links by copying a line, e.g.
+           <a href="https://instagram.com/yourname">Instagram</a> -->
+      <nav class="footer-links" aria-label="Footer">
+        <a href="weddings.html">Weddings</a>
+        <a href="events.html">Events</a>
+        <a href="portraits.html">Portraits</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <p class="copyright">&copy; <span id="year">2026</span> Chef with the Lens Studio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Simple photo viewer (opens when a portfolio photo is clicked) -->
+  <dialog class="lightbox" aria-label="Photo viewer">
+    <button class="lightbox-close" type="button" aria-label="Close photo">&times;</button>
+    <img src="" alt="" />
+  </dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
