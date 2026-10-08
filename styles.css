@@ -238,6 +238,7 @@ h3 { font-size: clamp(1.9rem, 3.4vw, 2.75rem); }
 .portfolio-grid li { min-height: 0; }
 .portfolio-grid li.tall { grid-row: span 2; }
 .portfolio-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.portfolio-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
 .portfolio-item { display: block; overflow: hidden; border-radius: 14px; background: var(--bg); height: 100%; }
 .portfolio-item img {
   width: 100%; aspect-ratio: 3 / 2; object-fit: cover;
@@ -319,6 +320,7 @@ h3 { font-size: clamp(1.9rem, 3.4vw, 2.75rem); }
   .service:nth-of-type(even) .service-media { order: 0; }
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .portfolio-grid li.feature { grid-column: 1 / -1; }
+  .portfolio-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
   .contact-inner { grid-template-columns: 1fr; }
 }
 

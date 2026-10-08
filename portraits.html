@@ -6,7 +6,7 @@
 
   <!-- EDIT ME: Page title and description for this catalog page -->
   <title>Portraits | Chef with the Lens Studio</title>
-  <meta name="description" content="Portrait photography by Chef with the Lens Studio: lifestyle, glam and bridal portraits in natural light." />
+  <meta name="description" content="Portrait photography by Chef with the Lens Studio: lifestyle, editorial and glam portraits in natural light." />
 
   <!-- Applies the visitor's saved Light/Dark choice before the page
        draws, so there is no flash. Default is Light. (No need to edit.) -->
@@ -83,7 +83,7 @@
         <a class="back-link" href="index.html">&larr; Home</a>
         <p class="eyebrow">Catalog</p>
         <h1 id="page-title">Portraits.</h1>
-        <p class="section-intro">Lifestyle, glam and bridal portraits, in natural light and full of personality.</p>
+        <p class="section-intro">Lifestyle, editorial and glam portraits, in natural light and full of personality.</p>
       </div>
     </section>
 
@@ -97,16 +97,20 @@
            3. Use class="reveal" for WIDE photos and
               class="reveal tall" for TALL (portrait) photos.
          To remove a photo, delete its whole <li> line.
+         This page uses a 4-across grid (class "portfolio-grid cols-4"),
+         which looks most even with 4, 8 or 12 tall photos.
          ============================================================ -->
     <section class="catalog-gallery" aria-label="Portraits gallery">
       <div class="container">
-        <ul class="portfolio-grid">
+        <ul class="portfolio-grid cols-4">
           <li class="reveal tall"><a href="images/catalog/portraits/straw-hat-color.jpg" class="portfolio-item"><img src="images/catalog/portraits/straw-hat-color.jpg" alt="Woman in a straw hat and white top in dappled forest light, warm colour grade" loading="lazy" width="1600" height="2000" /></a></li>
+          <li class="reveal tall"><a href="images/catalog/portraits/rooftop-orange-coat.jpg" class="portfolio-item"><img src="images/catalog/portraits/rooftop-orange-coat.jpg" alt="Woman in an orange trench coat and black thigh-high boots posing with one foot on a wooden stool on a city rooftop" loading="lazy" width="1440" height="1440" /></a></li>
+          <li class="reveal tall"><a href="images/catalog/portraits/curls-round-glasses.jpg" class="portfolio-item"><img src="images/catalog/portraits/curls-round-glasses.jpg" alt="Woman with short curly hair and round glasses in a striped top, looking over her shoulder beside a window" loading="lazy" width="1333" height="2000" /></a></li>
+          <li class="reveal tall"><a href="images/catalog/portraits/ocean-arm-raised.jpg" class="portfolio-item"><img src="images/catalog/portraits/ocean-arm-raised.jpg" alt="Woman in a green bikini standing in the ocean with one arm raised toward the sky" loading="lazy" width="1440" height="1800" /></a></li>
           <li class="reveal tall"><a href="images/catalog/portraits/night-glam-rooftop.jpg" class="portfolio-item"><img src="images/catalog/portraits/night-glam-rooftop.jpg" alt="Night portrait of a woman in a black slip dress holding gold heels on a rooftop terrace" loading="lazy" width="1440" height="1800" /></a></li>
-          <li class="reveal tall"><a href="images/catalog/portraits/bride-arcade-red-bouquet.jpg" class="portfolio-item"><img src="images/catalog/portraits/bride-arcade-red-bouquet.jpg" alt="Smiling bride in a black tulle gown holding a red bouquet beside the columns of an arched arcade" loading="lazy" width="1334" height="2000" /></a></li>
-          <li class="reveal tall"><a href="images/catalog/portraits/bride-red-roses.jpg" class="portfolio-item"><img src="images/catalog/portraits/bride-red-roses.jpg" alt="Bridal portrait of a bride seated on a couch holding a red rose bouquet in soft window light" loading="lazy" width="1333" height="2000" /></a></li>
+          <li class="reveal tall"><a href="images/catalog/portraits/white-blouse-natural-curls.jpg" class="portfolio-item"><img src="images/catalog/portraits/white-blouse-natural-curls.jpg" alt="Woman with natural curly hair in a white eyelet blouse, softly lit among trees" loading="lazy" width="1333" height="2000" /></a></li>
+          <li class="reveal tall"><a href="images/catalog/portraits/golden-hour-grass.jpg" class="portfolio-item"><img src="images/catalog/portraits/golden-hour-grass.jpg" alt="Woman with long braids and a patterned headscarf sitting in tall grass at golden hour, seen from a low angle" loading="lazy" width="1333" height="2000" /></a></li>
           <li class="reveal tall"><a href="images/catalog/portraits/straw-hat-black-and-white.jpg" class="portfolio-item"><img src="images/catalog/portraits/straw-hat-black-and-white.jpg" alt="Black-and-white portrait of a woman in a straw hat among trees" loading="lazy" width="1600" height="2000" /></a></li>
-          <li class="reveal tall"><a href="images/catalog/portraits/bride-seated.jpg" class="portfolio-item"><img src="images/catalog/portraits/bride-seated.jpg" alt="Bride seated on a white couch with a red rose bouquet in front of a striped mint and cream wall" loading="lazy" width="1333" height="2000" /></a></li>
         </ul>
       </div>
     </section>
@@ -146,7 +150,7 @@
   <!-- Simple photo viewer (opens when a portfolio photo is clicked) -->
   <dialog class="lightbox" aria-label="Photo viewer">
     <button class="lightbox-close" type="button" aria-label="Close photo">&times;</button>
-    <img src="" alt="" />
+    <img alt="" />
   </dialog>
 
   <script src="script.js" defer></script>

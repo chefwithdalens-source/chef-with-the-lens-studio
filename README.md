@@ -52,6 +52,7 @@ No installs, no build step. **To view it, just double-click `index.html`** (it o
 Tip: the grid fills best when the number of "cells" (wide = 1, tall = 2) is a multiple of 3. On phones, adding
 `feature` to a wide photo's class (e.g. `class="reveal feature"`) makes it full width to even out the last row.
 The Events page uses a 2-column gallery (`class="portfolio-grid cols-2"`); remove ` cols-2` once it has 3 or more photos.
+The Portraits page uses a 4-across gallery (`class="portfolio-grid cols-4"`, 2-across on phones); it looks most even with 4, 8 or 12 tall photos.
 
 ## Editing the words (copy)
 
@@ -165,8 +166,10 @@ Catalog pages (resized from the original files to max 2000px, EXIF removed):
 | portraits/straw-hat-color.jpg | IMG_1353 2.jpg |
 | portraits/straw-hat-black-and-white.jpg | IMG_1353.jpg |
 | portraits/night-glam-rooftop.jpg | 56230215-C02B-44EF-A9C1-052BB3EAA3A4.jpg |
-| portraits/bride-red-roses.jpg | WEDDINGS/IMG_0137.jpg |
-| portraits/bride-seated.jpg | WEDDINGS/IMG_0135.jpg |
-| portraits/bride-arcade-red-bouquet.jpg | WEDDINGS/IMG_3187.jpg |
+| portraits/rooftop-orange-coat.jpg | Portraits/5E1152F2-098C-43D9-9132-842665F71B81.jpg |
+| portraits/ocean-arm-raised.jpg | Portraits/A9DD27CA-18C0-419D-B8D8-8B9B3AE3CACB.jpg |
+| portraits/golden-hour-grass.jpg | Portraits/IMG_0957.jpeg |
+| portraits/curls-round-glasses.jpg | Portraits/IMG_3836.jpg |
+| portraits/white-blouse-natural-curls.jpg | Portraits/IMG_9466.jpg |
 
 Not used: WEDDINGS/JPG (a low-res duplicate of the IMG_7911 bouquet-tunnel kiss).
