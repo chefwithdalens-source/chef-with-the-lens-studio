@@ -19,7 +19,7 @@ No installs, no build step. **To view it, just double-click `index.html`** (it o
 
 | File | What it is |
 |------|------------|
-| `index.html` | The homepage: hero, services, portfolio, booking form |
+| `index.html` | The homepage: hero, services, portfolio, about, booking form |
 | `weddings.html` | Weddings catalog page |
 | `events.html` | Events catalog page |
 | `portraits.html` | Portraits catalog page |
@@ -31,7 +31,7 @@ No installs, no build step. **To view it, just double-click `index.html`** (it o
 
 ## Pages and navigation
 
-- The menu (top) and footer link to **Weddings, Events, Portraits** (catalog pages), **Portfolio** and **Contact**.
+- The menu (top) and footer link to **Weddings, Events, Portraits** (catalog pages), **Portfolio**, **About** and **Contact**.
 - On the homepage, each service row is clickable (photo, title or "View the … catalog →") and opens its catalog page.
 - Each catalog page has a big title, a one-line intro, a photo gallery (click a photo to view it large),
   a **Book a session** button (goes to the booking form on the homepage) and a link back to Home.
@@ -65,7 +65,8 @@ Look for comments that say **`EDIT ME`**; they mark every spot you're likely to 
 - **Catalog pages**: the title, intro line and "Like what you see?" text at the top/bottom of each catalog page.
   If you rename a service, also update the matching option in the **Session type** dropdown of the form.
 - **Portfolio intro**, **booking intro**
-- **Contact details**: replace the placeholder `hello@example.com` and `Your City, State (placeholder)`
+- **About** ("Hi, I'm Rayon."): the headline and the three first-person paragraphs, between the Portfolio and Booking sections
+- **Contact details**: replace the placeholder `hello@example.com` (the location is set to Bay Area, California)
 - **Footer**: add social links (an example is in the comment)
 
 Only change the text *between* the tags, e.g. `<h3>Portraits</h3>` becomes `<h3>Headshots</h3>`.
@@ -78,6 +79,7 @@ Then update that photo's `alt="..."` text in `index.html` with a short descripti
 | File | Where it appears |
 |------|------------------|
 | `images/hero.jpg` | Big full-screen photo at the top. Use a wide photo, about 2400×1600. A dark tint is added automatically so the white headline stays readable. |
+| `images/about-rayon.jpg` | About section photo (shown tall beside the text on computers, wide on phones). Update its `alt="..."` if you change it. |
 | `images/service-weddings.jpg` | Weddings row |
 | `images/service-events.jpg` | Events row |
 | `images/service-portraits.jpg` | Portraits row |
@@ -137,6 +139,7 @@ Upload the whole folder to any static host (Netlify Drop, GitHub Pages, Cloudfla
 | Site file | Original (MY CATOLOG/…) |
 |-----------|-------------------------|
 | hero.jpg | WEDDINGS/IMG_7701.jpg |
+| about-rayon.jpg | Rayon's own black-and-white self-portrait (provided directly by the owner) |
 | service-weddings.jpg | WEDDINGS/IMG_3216-Enhanced-NR.jpg |
 | service-events.jpg | WEDDINGS/IMG_6456.JPG |
 | service-portraits.jpg | IMG_1353 2.jpg |
