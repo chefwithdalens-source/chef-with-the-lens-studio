@@ -66,7 +66,7 @@ Look for comments that say **`EDIT ME`**; they mark every spot you're likely to 
   If you rename a service, also update the matching option in the **Session type** dropdown of the form.
 - **Portfolio intro**, **booking intro**
 - **About** ("Hi, I'm Rayon."): the headline and the three first-person paragraphs, between the Portfolio and Booking sections
-- **Contact details**: replace the placeholder `hello@example.com` (the location is set to Bay Area, California)
+- **Contact details**: replace the placeholder `chefwithdalens@gmail.com` (the location is set to Bay Area, California)
 - **Footer**: add social links (an example is in the comment)
 
 Only change the text *between* the tags, e.g. `<h3>Portraits</h3>` becomes `<h3>Headshots</h3>`.
@@ -121,7 +121,7 @@ Change a color code there and it updates across the whole site. `--accent` is th
 
 There is no server, so by default pressing **Send request** opens the visitor's own email app
 with a pre-filled message (name, email, session type, date, message) addressed to your email.
-Replace `hello@example.com` in **both** places on the `<form>` line (`action="mailto:..."` and `data-mailto="..."`).
+Replace `chefwithdalens@gmail.com` in **both** places on the `<form>` line (`action="mailto:..."` and `data-mailto="..."`).
 
 **Recommended upgrade:** use a free form service such as [Formspree](https://formspree.io) so visitors
 don't need an email app. Step-by-step instructions are in the comment just above the booking section
