@@ -1,0 +1,4 @@
+# Only function settings are kept here. The booking-email function is called by a database
+# trigger (no user JWT), so JWT verification is off; it checks x-webhook-secret instead.
+[functions.booking-email]
+verify_jwt = false

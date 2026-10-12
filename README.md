@@ -176,3 +176,13 @@ Catalog pages (resized from the original files to max 2000px, EXIF removed):
 | portraits/white-blouse-natural-curls.jpg | Portraits/IMG_9466.jpg |
 
 Not used: WEDDINGS/JPG (a low-res duplicate of the IMG_7911 bouquet-tunnel kiss).
+
+## Booking email to the owner (Supabase Edge Function + Resend)
+Each new booking emails the owner an editorial card (reply-to = the client). Code: `supabase/functions/booking-email/` (template copied from the studio email design). A database trigger calls it, so the website can't trigger emails itself.
+
+Setup (new Supabase project):
+1. Deploy the function with JWT verification off: `supabase functions deploy booking-email --project-ref xzxfdeugzmeubukdblmo --no-verify-jwt`
+2. Function secrets: `RESEND_API_KEY` (send-only studio key) and `BOOKING_WEBHOOK_SECRET` (a long random string).
+3. Run `supabase/booking-email-trigger.sql` in the SQL Editor after replacing the placeholder with the same `BOOKING_WEBHOOK_SECRET` value.
+
+Until a domain is verified in Resend, mail comes from `onboarding@resend.dev` and can only go to the Resend account owner's address.
