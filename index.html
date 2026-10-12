@@ -304,8 +304,74 @@
           </div>
 
           <div class="form-row">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Location, number of guests, the look you're after..."></textarea>
+            <label for="brief">What would you like done?</label>
+            <textarea id="brief" name="brief" rows="3" required maxlength="1000" placeholder="e.g. Candid coverage of our ceremony and first dance, plus 30 minutes of couple portraits"></textarea>
+          </div>
+
+          <div class="form-row-split">
+            <div class="form-row">
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" maxlength="200" placeholder="Who or what we're photographing" />
+            </div>
+            <div class="form-row">
+              <label for="location">Location</label>
+              <input id="location" name="location" type="text" maxlength="200" placeholder="Venue, city or 'studio'" />
+            </div>
+          </div>
+
+          <div class="form-row-split">
+            <div class="form-row">
+              <label for="time">Preferred time</label>
+              <select id="time" name="preferred_time">
+                <option value="">Flexible</option>
+                <option>Morning</option>
+                <option>Afternoon</option>
+                <option>Golden hour</option>
+                <option>Evening</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="budget">Budget</label>
+              <select id="budget" name="budget">
+                <option value="">Prefer not to say</option>
+                <option>Under $500</option>
+                <option>$500–$1,500</option>
+                <option>$1,500–$3,000</option>
+                <option>$3,000+</option>
+              </select>
+            </div>
+          </div>
+
+          <fieldset class="form-row mood-group">
+            <legend>Style &amp; mood <span class="optional">(pick any)</span></legend>
+            <div class="mood-chips">
+              <label><input type="checkbox" name="moods" value="Natural" /> Natural</label>
+              <label><input type="checkbox" name="moods" value="Editorial" /> Editorial</label>
+              <label><input type="checkbox" name="moods" value="Moody" /> Moody</label>
+              <label><input type="checkbox" name="moods" value="Bright & airy" /> Bright &amp; airy</label>
+              <label><input type="checkbox" name="moods" value="Cinematic" /> Cinematic</label>
+              <label><input type="checkbox" name="moods" value="Documentary" /> Documentary</label>
+              <label><input type="checkbox" name="moods" value="Playful" /> Playful</label>
+              <label><input type="checkbox" name="moods" value="Classic" /> Classic</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-row refs-group">
+            <legend>Photo references <span class="optional">(optional)</span></legend>
+            <label class="refs-drop" for="refFiles">
+              <span class="refs-drop-title">Add up to 5 images</span>
+              <span class="optional">JPG, PNG, WebP, GIF or HEIC, up to 10&nbsp;MB each</span>
+              <input id="refFiles" name="ref_files" type="file" accept="image/*" multiple />
+            </label>
+            <ul class="refs-preview" aria-live="polite"></ul>
+            <p class="refs-err" role="alert" hidden></p>
+            <label for="refLinks">Or paste links <span class="optional">(Pinterest, Instagram, Drive… one per line)</span></label>
+            <textarea id="refLinks" name="reference_links" rows="2" maxlength="2000" placeholder="https://"></textarea>
+          </fieldset>
+
+          <div class="form-row">
+            <label for="message">Anything else? <span class="optional">(optional)</span></label>
+            <textarea id="message" name="message" rows="5" placeholder="Number of guests, must-have shots, timing…"></textarea>
           </div>
 
           <button class="btn btn-large" type="submit">Send request</button>
@@ -341,6 +407,7 @@
     <img alt="" />
   </dialog>
 
+  <script src="booking-config.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 </html>

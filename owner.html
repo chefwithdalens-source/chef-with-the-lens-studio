@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Bookings · Studio owner</title>
+  <script>
+    (function () { var d = document.documentElement; d.classList.add("js");
+      try { if (localStorage.getItem("cwl-theme") === "dark") d.setAttribute("data-theme", "dark"); } catch (e) {} })();
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="owner.css" />
+</head>
+<body class="owner">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Chef with the Lens Studio</a>
+      <div class="ow-who" id="who" hidden><span id="whoEmail"></span><button type="button" class="btn btn-small" id="signOut">Sign out</button></div>
+    </div>
+  </header>
+  <main class="container ow-main" id="main">
+    <section id="signin" class="ow-signin" hidden>
+      <p class="eyebrow">Studio owner</p>
+      <h1>Booking requests</h1>
+      <p class="section-intro">Sign in with the studio email. We'll send you a one-time link.</p>
+      <form id="magicForm" class="booking-form ow-form" novalidate>
+        <div class="form-row"><label for="email">Email</label><input id="email" type="email" autocomplete="email" required /></div>
+        <button class="btn" type="submit">Email me a sign-in link</button>
+        <p class="form-note" id="magicMsg" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="board" hidden>
+      <div class="ow-head">
+        <div><p class="eyebrow">Studio owner</p><h1>Booking requests</h1><p class="ow-count" id="count" aria-live="polite"></p></div>
+        <button type="button" class="btn btn-small" id="refresh">Refresh</button>
+      </div>
+      <div class="ow-filters" role="group" aria-label="Filters">
+        <div class="ow-seg" role="radiogroup" aria-label="When">
+          <button type="button" role="radio" data-when="upcoming" aria-checked="true">Upcoming</button>
+          <button type="button" role="radio" data-when="past" aria-checked="false">Past</button>
+          <button type="button" role="radio" data-when="all" aria-checked="false">All</button>
+        </div>
+        <label class="sr-only" for="fStatus">Status</label>
+        <select id="fStatus"><option value="">All statuses</option><option value="new">New</option><option value="contacted">Contacted</option><option value="booked">Booked</option><option value="done">Done</option><option value="declined">Declined</option></select>
+        <label class="sr-only" for="fService">Service</label>
+        <select id="fService"><option value="">All services</option></select>
+        <label class="sr-only" for="fSearch">Search</label>
+        <input id="fSearch" type="search" placeholder="Search name, brief, mood…" />
+      </div>
+      <div id="cards" class="ow-cards"></div>
+    </section>
+    <p id="status" class="ow-status" role="status" aria-live="polite"></p>
+  </main>
+
+  <dialog class="ow-lightbox" id="lightbox" aria-label="Reference photo">
+    <button type="button" class="ow-lb-close" aria-label="Close">×</button>
+    <img alt="" />
+  </dialog>
+
+  <script src="booking-config.js"></script>
+  <script src="owner.js"></script>
+</body>
+</html>

@@ -378,3 +378,26 @@ h3 { font-size: clamp(1.9rem, 3.4vw, 2.75rem); }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js .reveal { opacity: 1; transform: none; }
 }
+
+/* Booking form: creative brief extras */
+.optional { font-weight: 400; color: var(--text-muted); }
+.mood-group { border: 0; padding: 0; margin: 0; min-width: 0; }
+.mood-group legend { font-size: 0.9rem; font-weight: 500; padding: 0; margin-bottom: 0.5rem; }
+.mood-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.booking-form .mood-chips label { position: relative; display: inline-flex; align-items: center; min-height: 44px; padding: 0 1rem; border: 1px solid var(--line); border-radius: 999px; cursor: pointer; font-size: 0.95rem; font-weight: 500; user-select: none; }
+.booking-form .mood-chips input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.booking-form .mood-chips label:has(input:checked) { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.booking-form .mood-chips label:has(input:focus-visible) { outline: 3px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 600px) { .form-row-split { grid-template-columns: 1fr; } }
+.refs-group { border: 0; padding: 0; margin: 0; min-width: 0; display: grid; gap: 0.5rem; }
+.refs-group legend { font-size: 0.9rem; font-weight: 500; padding: 0; margin-bottom: 0.5rem; }
+.booking-form .refs-drop { display: grid; gap: 0.2rem; justify-items: center; text-align: center; padding: 1.4rem 1rem; border: 1.5px dashed var(--line); border-radius: 14px; cursor: pointer; }
+.booking-form .refs-drop:hover, .booking-form .refs-drop:focus-within { border-color: var(--accent); }
+.refs-drop-title { font-weight: 600; color: var(--accent); }
+.booking-form .refs-drop input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.refs-preview { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.refs-preview li { position: relative; width: 72px; height: 72px; }
+.refs-preview img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+.refs-preview button { position: absolute; top: -8px; right: -8px; width: 26px; height: 26px; border-radius: 50%; border: 0; background: #1d1d1f; color: #fff; cursor: pointer; font-size: 16px; line-height: 1; }
+.refs-err { margin: 0; color: #c4161c; font-size: 0.9rem; }
+[data-theme="dark"] .refs-err { color: #ff6b6b; }
