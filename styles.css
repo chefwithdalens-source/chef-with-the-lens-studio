@@ -245,6 +245,9 @@ h3 { font-size: clamp(1.9rem, 3.4vw, 2.75rem); }
   transition: transform 0.9s var(--ease), filter 0.5s ease;
 }
 .portfolio-grid li.tall img { height: 100%; aspect-ratio: 3 / 4; }
+/* Landscape photo inside an all-tall grid: spans 2 columns x 2 rows. */
+.portfolio-grid li.wide-feature { grid-column: span 2; grid-row: span 2; }
+.portfolio-grid li.wide-feature img { height: 100%; aspect-ratio: 3 / 2; }
 .portfolio-item:hover img, .portfolio-item:focus-visible img { transform: scale(1.05); filter: brightness(1.04); }
 
 /* ---------- Lightbox ---------- */
