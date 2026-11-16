@@ -17,15 +17,13 @@
   --accent: #0066cc;        /* the ONE accent: buttons and links */
   --accent-hover: #0055b3;
   --on-accent: #ffffff;     /* text on accent buttons */
-  --header-bg: rgba(255, 255, 255, 0.10);
-  --header-bg-scrolled: rgba(255, 255, 255, 0.18);
-  --header-border: rgba(255, 255, 255, 0.48);
-  --header-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.72), inset 0 -1px 0 rgba(255, 255, 255, 0.08);
-  --header-drop: 0 8px 28px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.06);
-  --header-menu-bg: rgba(255, 255, 255, 0.50);
-  --header-menu-bg-scrolled: rgba(255, 255, 255, 0.55);
-  --header-text-shadow: 0 1px 1px rgba(255, 255, 255, 0.85), 0 0 10px rgba(255, 255, 255, 0.45);
-  --header-icon-shadow: drop-shadow(0 1px 1px rgba(255, 255, 255, 0.85)) drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
+  --header-bg: rgba(255, 255, 255, 0.60);
+  --header-bg-scrolled: rgba(255, 255, 255, 0.70);
+  --header-border: rgba(255, 255, 255, 0.4);
+  --header-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  --header-drop: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --header-menu-bg: rgba(255, 255, 255, 0.72);
+  --header-menu-bg-scrolled: rgba(255, 255, 255, 0.82);
   --shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.25);
 
   --font: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -49,15 +47,13 @@
   --accent: #2997ff;
   --accent-hover: #4aa8ff;
   --on-accent: #000000;
-  --header-bg: rgba(18, 18, 20, 0.12);
-  --header-bg-scrolled: rgba(18, 18, 20, 0.20);
-  --header-border: rgba(255, 255, 255, 0.16);
-  --header-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.22), inset 0 -1px 0 rgba(255, 255, 255, 0.04);
-  --header-drop: 0 8px 28px rgba(0, 0, 0, 0.42), 0 1px 3px rgba(0, 0, 0, 0.25);
-  --header-menu-bg: rgba(18, 18, 20, 0.50);
-  --header-menu-bg-scrolled: rgba(18, 18, 20, 0.55);
-  --header-text-shadow: 0 1px 2px rgba(0, 0, 0, 0.75), 0 0 10px rgba(0, 0, 0, 0.45);
-  --header-icon-shadow: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
+  --header-bg: rgba(28, 28, 30, 0.60);
+  --header-bg-scrolled: rgba(28, 28, 30, 0.70);
+  --header-border: rgba(255, 255, 255, 0.22);
+  --header-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  --header-drop: 0 8px 32px rgba(0, 0, 0, 0.28);
+  --header-menu-bg: rgba(28, 28, 30, 0.72);
+  --header-menu-bg-scrolled: rgba(28, 28, 30, 0.82);
   --shadow: 0 20px 40px -24px rgba(0, 0, 0, 0.8);
 }
 
@@ -134,7 +130,7 @@ h3 { font-size: clamp(1.9rem, 3.4vw, 2.75rem); }
 }
 .icon-btn:hover { background: rgba(127, 127, 127, 0.14); }
 
-/* ---------- Header (Apple-style liquid glass) ---------- */
+/* ---------- Header (Apple-style translucent material) ---------- */
 .site-header {
   position: fixed; inset: 0 0 auto; z-index: 50;
   height: var(--header-h);
@@ -146,61 +142,39 @@ h3 { font-size: clamp(1.9rem, 3.4vw, 2.75rem); }
 .site-header .header-inner {
   pointer-events: auto;
   position: relative;
+  isolation: isolate;
   height: var(--header-bar-h);
   width: 100%;
   display: flex;
   align-items: center;
   gap: 1.5rem;
   padding-inline: 1.15rem 0.75rem;
-  background: transparent;
-}
-/* Glass lives on a pseudo so the mobile dropdown is not a
-   backdrop-filter descendant (Chrome composites those incorrectly). */
-.site-header .header-inner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  border-radius: 999px;
   background: var(--header-bg);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
   border: 1px solid var(--header-border);
+  border-radius: 999px;
   box-shadow: var(--header-highlight), var(--header-drop);
-  pointer-events: none;
   transition:
     background-color 0.4s ease,
     box-shadow 0.4s ease,
     border-color 0.4s ease;
 }
-.site-header.is-scrolled .header-inner::before {
+.site-header.is-scrolled .header-inner {
   background: var(--header-bg-scrolled);
 }
-.site-header .brand,
-.site-header .site-nav,
-.site-header .header-actions {
-  position: relative;
-  z-index: 1;
-}
-.site-header .brand,
-.site-header .site-nav a {
-  text-shadow: var(--header-text-shadow);
-}
-.site-header .icon-btn {
-  filter: var(--header-icon-shadow);
-}
 @supports not ((backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px))) {
-  .site-header .header-inner::before {
+  .site-header .header-inner {
     background: rgba(255, 255, 255, 0.94);
   }
-  [data-theme="dark"] .site-header .header-inner::before {
-    background: rgba(18, 18, 20, 0.94);
+  [data-theme="dark"] .site-header .header-inner {
+    background: rgba(28, 28, 30, 0.94);
   }
-  .site-header.is-scrolled .header-inner::before {
+  .site-header.is-scrolled .header-inner {
     background: rgba(255, 255, 255, 0.97);
   }
-  [data-theme="dark"] .site-header.is-scrolled .header-inner::before {
-    background: rgba(18, 18, 20, 0.97);
+  [data-theme="dark"] .site-header.is-scrolled .header-inner {
+    background: rgba(28, 28, 30, 0.97);
   }
 }
 
@@ -208,7 +182,7 @@ h3 { font-size: clamp(1.9rem, 3.4vw, 2.75rem); }
 .brand:hover { color: var(--text); text-decoration: none; }
 
 .site-nav ul { list-style: none; display: flex; gap: 1.75rem; margin: 0; padding: 0; }
-.site-nav a { color: var(--text); font-size: 0.9rem; opacity: 0.8; transition: opacity 0.2s; }
+.site-nav a { color: var(--text); font-size: 0.9rem; font-weight: 500; opacity: 0.85; transition: opacity 0.2s; }
 .site-nav a:hover { opacity: 1; text-decoration: none; color: var(--text); }
 
 .header-actions { display: flex; align-items: center; gap: 0.5rem; }
@@ -385,7 +359,7 @@ h3 { font-size: clamp(1.9rem, 3.4vw, 2.75rem); }
 .catalog-cta h2 { margin-bottom: 0.3em; }
 .catalog-cta .section-intro { margin: 0 auto 2.25rem; max-width: 36ch; }
 .catalog-cta .cta-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem 2rem; }
-.site-nav a[aria-current="page"] { opacity: 1; font-weight: 700; }
+.site-nav a[aria-current="page"] { opacity: 1; font-weight: 500; }
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--bg-alt); color: var(--text-muted); font-size: 0.85rem; padding: 2.25rem 0; border-top: 1px solid var(--line); }
@@ -428,14 +402,47 @@ h3 { font-size: clamp(1.9rem, 3.4vw, 2.75rem); }
   .nav-toggle[aria-expanded="true"] .nav-toggle-bar::before { transform: translateY(6px) rotate(45deg); }
   .nav-toggle[aria-expanded="true"] .nav-toggle-bar::after { transform: translateY(-6px) rotate(-45deg); }
 
+  /* Keep the pill material off the inner box so the dropdown is not
+     nested inside a backdrop-filter element (Chrome smear / bleed). */
+  .site-header .header-inner {
+    gap: 0.5rem;
+    background: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    border-color: transparent;
+    box-shadow: none;
+  }
+  .site-header .header-inner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: 999px;
+    background: var(--header-bg);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid var(--header-border);
+    box-shadow: var(--header-highlight), var(--header-drop);
+    pointer-events: none;
+  }
+  .site-header.is-scrolled .header-inner::before {
+    background: var(--header-bg-scrolled);
+  }
+  .site-header .brand,
+  .site-header .site-nav,
+  .site-header .header-actions {
+    position: relative;
+    z-index: 1;
+  }
+
   .site-header .site-nav {
     pointer-events: auto;
     position: absolute; top: calc(100% + 8px); left: 0; right: 0;
     z-index: 2;
     isolation: isolate;
     background: var(--header-menu-bg);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
-    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
     border: 1px solid var(--header-border);
     border-radius: 22px;
     box-shadow: var(--header-highlight), var(--header-drop);
@@ -445,18 +452,21 @@ h3 { font-size: clamp(1.9rem, 3.4vw, 2.75rem); }
   /* Menu is hidden until the button is tapped (only when JavaScript is on) */
   .js .site-header .site-nav:not(.is-open) { display: none; }
   .site-header .site-nav ul { flex-direction: column; gap: 0; padding: 0.5rem 1.25rem 1.15rem; }
-  .site-header .site-nav a { display: block; padding: 0.95rem 0; font-size: 1.35rem; font-weight: 700; opacity: 1; border-bottom: 1px solid color-mix(in srgb, var(--line) 55%, transparent); }
+  .site-header .site-nav a { display: block; padding: 0.95rem 0; font-size: 1.35rem; font-weight: 500; opacity: 1; border-bottom: 1px solid color-mix(in srgb, var(--line) 55%, transparent); }
   .site-header .site-nav li:last-child a { border-bottom: 0; }
-  .site-header .header-inner { gap: 0.5rem; }
   .site-header .brand { font-size: 1rem; }
 }
 
 @supports not ((backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px))) {
   @media (max-width: 960px) {
+    .site-header .header-inner::before,
     .site-header .site-nav { background: rgba(255, 255, 255, 0.94); }
-    [data-theme="dark"] .site-header .site-nav { background: rgba(18, 18, 20, 0.94); }
+    [data-theme="dark"] .site-header .header-inner::before,
+    [data-theme="dark"] .site-header .site-nav { background: rgba(28, 28, 30, 0.94); }
+    .site-header.is-scrolled .header-inner::before,
     .site-header.is-scrolled .site-nav { background: rgba(255, 255, 255, 0.97); }
-    [data-theme="dark"] .site-header.is-scrolled .site-nav { background: rgba(18, 18, 20, 0.97); }
+    [data-theme="dark"] .site-header.is-scrolled .header-inner::before,
+    [data-theme="dark"] .site-header.is-scrolled .site-nav { background: rgba(28, 28, 30, 0.97); }
   }
 }
 
