@@ -58,6 +58,14 @@ if (navToggle && nav) {
   nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setNavOpen(false)));
 }
 
+/* Liquid glass: slightly more opaque after a short scroll */
+const header = document.querySelector(".site-header");
+if (header) {
+  const setHeaderScrolled = () => header.classList.toggle("is-scrolled", window.scrollY > 16);
+  setHeaderScrolled();
+  window.addEventListener("scroll", setHeaderScrolled, { passive: true });
+}
+
 /* Escape closes the settings panel or the phone menu */
 document.addEventListener("keydown", (e) => {
   if (e.key !== "Escape") return;
